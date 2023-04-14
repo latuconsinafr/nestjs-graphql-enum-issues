@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """The id of user"""
+  id: String!
+
+  """The username of user"""
+  username: String!
+
+  """The email of user"""
+  email: String!
+
+  """The phone of user"""
+  phone: String!
+
+  """The password of user"""
+  password: String!
+  roles: [UserRole!]!
+}
+
+"""The user role"""
+enum UserRole {
+  """The user with highest privilege"""
+  SuperAdmin
+
+  """The regular user"""
+  User
+}
+
+type Query {
+  users: [User!]!
+  user(id: String!): User
+}
